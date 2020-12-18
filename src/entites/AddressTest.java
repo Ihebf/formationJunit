@@ -29,8 +29,10 @@ public class AddressTest {
     @Test
     public void getVille() {
         String[] villes = {"Tunis","France","USA"};
+
         assertFalse("ville exception",
-                !Arrays.stream(villes).anyMatch(v ->v.toLowerCase().equals(address.getVille().toLowerCase())));
+                !Arrays.stream(villes).anyMatch
+                        (v ->v.toLowerCase().equals(address.getVille().toLowerCase())));
     }
 
 
