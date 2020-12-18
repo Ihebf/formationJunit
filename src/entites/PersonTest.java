@@ -37,6 +37,7 @@ public class PersonTest {
 
     @Test
     public void getAge() {
-        assertTrue("age mush higher or equal than 10 and less than 100",person.getAge()>=10 && person.getAge()<=99);
+        assertTrue("age mush higher or equal than 10 and less than 100",person.getAge()>=10
+                && person.getAge()<=99);
     }
 }

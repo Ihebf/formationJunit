@@ -29,15 +29,39 @@ public class Pays {
         return false;
     }
 
-    public Person update(Person person){
+    public boolean update(Person person){
         int size = personList.size();
         for (int i=0;i<size;i++)
             if (person.getMatricule() == personList.get(i).getMatricule()) {
                 personList.get(i).setAddress(person.getAddress());
                 personList.get(i).setAge(person.getAge());
                 personList.get(i).setNom(person.getNom());
-                return personList.get(i);
+                return true;
             }
-        return null;
+        return false;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public List<Person> getPersonList() {
+        return personList;
+    }
+
+    public void setPersonList(List<Person> personList) {
+        this.personList = personList;
+    }
+
+    public int getNbrMax() {
+        return nbrMax;
+    }
+
+    public void setNbrMax(int nbrMax) {
+        this.nbrMax = nbrMax;
     }
 }
