@@ -1,11 +1,19 @@
 package entites;
 
+import java.sql.SQLException;
+
 public class Person {
 
     private int matricule;
     private Address address;
     private String nom;
     private int age;
+
+    public Person(int matricule, String nom, int age) {
+        this.matricule = matricule;
+        this.nom = nom;
+        this.age = age;
+    }
 
     public Person(int matricule, Address address, String nom, int age) {
         this.matricule = matricule;
@@ -58,4 +66,6 @@ public class Person {
                 ", age=" + age +
                 '}';
     }
+
+
 }

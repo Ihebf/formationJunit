@@ -11,7 +11,7 @@ public class PersonTest {
     Person person;
     @Before
     public void setUp() throws Exception {
-        person = new Person(1,new Address("rue1","ville","1"),"nom",9);
+        person = new Person(1,new Address("rue1","ville","1"),"nom",19);
     }
 
     @After

@@ -1,5 +1,6 @@
 package entites;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class Pays {
@@ -63,5 +64,9 @@ public class Pays {
 
     public void setNbrMax(int nbrMax) {
         this.nbrMax = nbrMax;
+    }
+
+    public void enregister() throws SQLException, ClassNotFoundException {
+        DataBase db = new DataBase(personList);
     }
 }
