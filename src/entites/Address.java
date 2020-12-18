@@ -4,9 +4,9 @@ public class Address {
 
     private String rue;
     private String ville;
-    private int num;
+    private String num;
 
-    public Address(String rue, String ville, int num) {
+    public Address(String rue, String ville, String num) {
         this.rue = rue;
         this.ville = ville;
         this.num = num;
@@ -31,11 +31,11 @@ public class Address {
         this.ville = ville;
     }
 
-    public int getNum() {
+    public String getNum() {
         return num;
     }
 
-    public void setNum(int num) {
+    public void setNum(String num) {
         this.num = num;
     }
 
