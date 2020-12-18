@@ -45,24 +45,39 @@ public class DataBase {
 
     private int add(List<Person> newList) throws SQLException {
         List<Person> oldList= findAll();
+        System.out.println(newList.size()+"//"+oldList.size());
         for(int i=oldList.size();i<newList.size();i++){
             String sql =
                     "INSERT INTO person(mat,nom,age) VALUES("+newList.get(i).getMatricule()+",'"+newList.get(i).getNom()+"',"+newList.get(i).getAge() +")";
             preparedStatement = connection.createStatement();
-            return preparedStatement.executeUpdate(sql);
+            preparedStatement.executeUpdate(sql);
         }
-        return 0;
+
+        return 1;
     }
 
-    public void delete(List<Person> newlist) throws SQLException {
+    public int delete(List<Person> newlist) throws SQLException {
         List<Person> oldList= findAll();
+        System.out.println(newlist.size()+"//"+oldList.size());
+        for (int i=newlist.size();i<oldList.size();i++){
+            String sql =
+                    "DELETE FROM person where mat="+oldList.get(i).getMatricule();
+            preparedStatement = connection.createStatement();
+            preparedStatement.executeUpdate(sql);
+        }
 
+        return 1;
     }
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         List<Person> personList = new ArrayList<>();
         personList.add(new Person(1,"nom",23));
-        personList.add(new Person(1,"nom1",23));
+//        personList.add(new Person(2,"nom1",23));
+//        personList.add(new Person(3,"nom2",23));
+//        personList.add(new Person(4,"nom",23));
+//        personList.add(new Person(5,"nom1",23));
+//        personList.add(new Person(6,"nom2",23));
+
         Pays pays = new Pays("String label", personList, 5);
         pays.enregister();
 
