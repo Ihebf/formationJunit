@@ -16,6 +16,16 @@ public class DataBase {
         verify(personList);
     }
 
+    public DataBase() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            this.connection = DriverManager.getConnection("jdbc:mysql://localhos5t/junitFormation","root","");
+        } catch (Exception e) {
+            //e.printStackTrace();
+        }
+
+    }
+
     public Connection getConnection() {
         return connection;
     }
@@ -72,6 +82,7 @@ public class DataBase {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
         List<Person> personList = new ArrayList<>();
         personList.add(new Person(1,"nom",23));
+        personList.add(new Person(1,"nom1",231));
 //        personList.add(new Person(2,"nom1",23));
 //        personList.add(new Person(3,"nom2",23));
 //        personList.add(new Person(4,"nom",23));
